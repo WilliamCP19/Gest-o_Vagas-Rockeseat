@@ -1,4 +1,4 @@
-package com.william.gestao_vagas.modules.candidate.company.entities;
+package com.william.gestao_vagas.modules.company.entities;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
