@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.william.gestao_vagas.modules.company.entities.Job;
-import com.william.gestao_vagas.modules.company.entities.services.CreateJobUserCase;
+import com.william.gestao_vagas.modules.company.services.CreateJobUserCase;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;

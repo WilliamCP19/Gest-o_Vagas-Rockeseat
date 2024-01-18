@@ -1,4 +1,4 @@
-package com.william.gestao_vagas.modules.company.entities.services;
+package com.william.gestao_vagas.modules.company.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
