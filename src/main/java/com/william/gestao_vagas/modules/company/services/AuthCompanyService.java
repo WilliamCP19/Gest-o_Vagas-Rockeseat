@@ -18,7 +18,7 @@ import com.william.gestao_vagas.modules.company.repositories.CompanyRepository;
 
 
 @Service
-public class AuthCompanyUseCase {
+public class AuthCompanyService {
     
     @Value("${security.token.secret}")
     private String secretKey;

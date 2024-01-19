@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.william.gestao_vagas.modules.company.entities.Company;
-import com.william.gestao_vagas.modules.company.services.CreateCompanyUseCase;
+import com.william.gestao_vagas.modules.company.services.CreateCompanyService;
 
 import jakarta.validation.Valid;
 
@@ -18,7 +18,7 @@ import jakarta.validation.Valid;
 public class CompanyController {
 
     @Autowired
-    private CreateCompanyUseCase createCompanyUseCase;
+    private CreateCompanyService createCompanyUseCase;
 
     @PostMapping("/")
     public ResponseEntity<Object> create(@Valid @RequestBody Company company) {

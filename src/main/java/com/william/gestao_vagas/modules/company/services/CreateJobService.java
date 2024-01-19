@@ -7,7 +7,7 @@ import com.william.gestao_vagas.modules.company.entities.Job;
 import com.william.gestao_vagas.modules.company.repositories.JobRepository;
 
 @Service
-public class CreateJobUserCase {
+public class CreateJobService {
 
     @Autowired
     private JobRepository jobRepository;

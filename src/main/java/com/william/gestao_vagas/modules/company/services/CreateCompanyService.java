@@ -9,7 +9,7 @@ import com.william.gestao_vagas.modules.company.entities.Company;
 import com.william.gestao_vagas.modules.company.repositories.CompanyRepository;
 
 @Service
-public class CreateCompanyUseCase {
+public class CreateCompanyService {
     
     @Autowired
     private PasswordEncoder passwordEncoder;

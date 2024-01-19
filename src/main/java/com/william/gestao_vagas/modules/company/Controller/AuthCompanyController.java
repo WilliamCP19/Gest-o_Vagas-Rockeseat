@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.william.gestao_vagas.modules.company.dto.AuthCompanyDTO;
-import com.william.gestao_vagas.modules.company.services.AuthCompanyUseCase;
+import com.william.gestao_vagas.modules.company.services.AuthCompanyService;
 
 @RestController
 @RequestMapping("/auth")
 public class AuthCompanyController {
     
     @Autowired
-    private AuthCompanyUseCase authCompanyUseCase;
+    private AuthCompanyService authCompanyUseCase;
 
     @PostMapping("/company/")
     public ResponseEntity<Object> create(@RequestBody AuthCompanyDTO authCompanyDTO) throws AuthenticationException {

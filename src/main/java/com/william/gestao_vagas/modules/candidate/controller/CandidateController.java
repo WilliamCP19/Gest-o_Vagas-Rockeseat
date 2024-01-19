@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.william.gestao_vagas.modules.candidate.entities.Candidate;
-import com.william.gestao_vagas.modules.candidate.services.CreateCandidateUseCase;
+import com.william.gestao_vagas.modules.candidate.services.CreateCandidateService;
 
 import jakarta.validation.Valid;
 
@@ -17,7 +17,7 @@ import jakarta.validation.Valid;
 public class CandidateController {
 
     @Autowired
-    private CreateCandidateUseCase createCandidateUseCase;
+    private CreateCandidateService createCandidateUseCase;
     
     @PostMapping("/")
     public ResponseEntity<Object> create (@Valid @RequestBody Candidate candidate) {

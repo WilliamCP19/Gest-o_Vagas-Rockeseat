@@ -8,7 +8,7 @@ import com.william.gestao_vagas.modules.candidate.entities.Candidate;
 import com.william.gestao_vagas.modules.candidate.repository.CandidateRepository;
 
 @Service
-public class CreateCandidateUseCase {
+public class CreateCandidateService {
 
     @Autowired
     private CandidateRepository candidateRepository;
