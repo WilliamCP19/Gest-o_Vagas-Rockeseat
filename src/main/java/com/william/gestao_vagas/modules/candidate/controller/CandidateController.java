@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,7 +23,7 @@ import jakarta.validation.Valid;
 public class CandidateController {
 
     @Autowired
-    private CreateCandidateService createCandidateUseCase;
+    private CreateCandidateService createCandidateService;
     
     @Autowired
     private ProfileCandidateService profileCandidateService;
@@ -30,7 +31,7 @@ public class CandidateController {
     @PostMapping("/")
     public ResponseEntity<Object> create (@Valid @RequestBody Candidate candidate) {
         try {
-            var result = createCandidateUseCase.execute(candidate);
+            var result = createCandidateService.execute(candidate);
             return ResponseEntity.ok().body(result);
         } catch (Exception e) {
             return ResponseEntity.ok().body(e.getMessage());
@@ -38,8 +39,9 @@ public class CandidateController {
     }
 
     @GetMapping("/")
-        public ResponseEntity<Object> get(HttpServletRequest httpServletRequest) {
-            var idCandidate = httpServletRequest.getAttribute("candidate_id");
+    @PreAuthorize("hasRole('CANDIDATE')")
+        public ResponseEntity<Object> get(HttpServletRequest request) {
+            var idCandidate = request.getAttribute("candidate_id");
             try {
                 var profile = profileCandidateService.execute(UUID.fromString(idCandidate.toString()));
                 return ResponseEntity.ok().body(profile);
