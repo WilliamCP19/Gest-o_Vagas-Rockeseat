@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.william.gestao_vagas.modules.candidate.dto.ProfileCandidateResponseDTO;
 import com.william.gestao_vagas.modules.candidate.entities.Candidate;
 import com.william.gestao_vagas.modules.candidate.services.CreateCandidateService;
 import com.william.gestao_vagas.modules.candidate.services.ProfileCandidateService;
@@ -57,6 +58,16 @@ public class CandidateController {
 
     @GetMapping("/")
     @PreAuthorize("hasRole('CANDIDATE')")
+    @Tag(name = "Candidate", description = "Informações de candidato")
+    @Operation(summary = "Perfil do Candidato", description = "Esta função é responsável por buscar as informações do candidato")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", content = {
+            @Content(schema = @Schema(implementation = ProfileCandidateResponseDTO.class))
+        }),
+        @ApiResponse(responseCode = "400", description = "User Not Found")
+    })
+    @SecurityRequirement(name = "jwt_auth")
+    
     public ResponseEntity<Object> get(HttpServletRequest request) {
         var idCandidate = request.getAttribute("candidate_id");
         try {
