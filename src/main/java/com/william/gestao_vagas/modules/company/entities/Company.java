@@ -23,6 +23,8 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    private String nome;
+
     @NotBlank()
     @Pattern(regexp = "\\S+", message = "O campo [username] não deve conter espacos")
     private String username;
@@ -34,7 +36,6 @@ public class Company {
     private String password;
 
     private String website;
-    private String nome;
     private String description;
 
     @CreationTimestamp

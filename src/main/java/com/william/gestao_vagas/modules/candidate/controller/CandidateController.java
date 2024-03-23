@@ -67,7 +67,7 @@ public class CandidateController {
         }
     }
 
-    @GetMapping("/job")
+    @GetMapping("/job/")
     @PreAuthorize("hasRole('CANDIDATE')")
     @Tag(name = "Candidate", description = "Informações do candidato")
     @Operation(summary = "Listagem de vagas disponível para o candidato", description = "Esta função é responsável por listar todas as vagas disponíveis, baseada no filtro")
