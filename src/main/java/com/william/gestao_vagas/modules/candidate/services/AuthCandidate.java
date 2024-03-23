@@ -19,7 +19,7 @@ import com.william.gestao_vagas.modules.candidate.dto.AuthCandidateResponseDTO;
 import com.william.gestao_vagas.modules.candidate.repository.CandidateRepository;
 
 @Service
-public class AuthCandidateService {
+public class AuthCandidate {
 
     @Value("${security.token.secret.candidate}")
     private String secretKey;

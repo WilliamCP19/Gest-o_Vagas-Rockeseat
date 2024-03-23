@@ -3,7 +3,7 @@ package com.william.gestao_vagas.modules.candidate.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.william.gestao_vagas.modules.candidate.dto.AuthCandidateRequestDTO;
-import com.william.gestao_vagas.modules.candidate.services.AuthCandidateService;
+import com.william.gestao_vagas.modules.candidate.services.AuthCandidate;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class AuthCandidateController {
 
     @Autowired
-    private AuthCandidateService authCandidateService;
+    private AuthCandidate authCandidateService;
 
     @PostMapping("/candidate/")
     public ResponseEntity<Object> auth(@RequestBody AuthCandidateRequestDTO authCandidateRequestDTO) {

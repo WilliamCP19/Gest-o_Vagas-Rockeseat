@@ -9,7 +9,7 @@ import com.william.gestao_vagas.modules.company.repositories.JobRepository;
 import com.william.gestao_vagas.modules.company.entities.Job;
 
 @Service
-public class ListAllJobsByFilterService {
+public class ListAllJobsByFilter {
     @Autowired
     private JobRepository jobRepository;
 

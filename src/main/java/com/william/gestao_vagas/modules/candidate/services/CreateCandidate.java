@@ -9,7 +9,7 @@ import com.william.gestao_vagas.modules.candidate.entities.Candidate;
 import com.william.gestao_vagas.modules.candidate.repository.CandidateRepository;
 
 @Service
-public class CreateCandidateService {
+public class CreateCandidate {
 
     @Autowired
     private PasswordEncoder passwordEncoder;

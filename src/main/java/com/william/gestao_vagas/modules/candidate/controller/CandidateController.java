@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.william.gestao_vagas.modules.candidate.dto.ProfileCandidateResponseDTO;
 import com.william.gestao_vagas.modules.candidate.entities.Candidate;
-import com.william.gestao_vagas.modules.candidate.services.CreateCandidateService;
+import com.william.gestao_vagas.modules.candidate.services.CreateCandidate;
 import com.william.gestao_vagas.modules.candidate.services.ProfileCandidateService;
-import com.william.gestao_vagas.modules.candidate.services.ListAllJobsByFilterService;
+import com.william.gestao_vagas.modules.candidate.services.ListAllJobsByFilter;
 import com.william.gestao_vagas.modules.company.entities.Job;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -39,13 +39,13 @@ import jakarta.validation.Valid;
 public class CandidateController {
 
     @Autowired
-    private CreateCandidateService createCandidateService;
+    private CreateCandidate createCandidateService;
     
     @Autowired
     private ProfileCandidateService profileCandidateService;
 
     @Autowired
-    private ListAllJobsByFilterService ListAllJobsByFilterService;
+    private ListAllJobsByFilter ListAllJobsByFilterService;
 
     @PostMapping("/")
     @Operation(summary = "Cadastro de Candidato", description = "Esta função é responsável por cadastrar um candidato")
