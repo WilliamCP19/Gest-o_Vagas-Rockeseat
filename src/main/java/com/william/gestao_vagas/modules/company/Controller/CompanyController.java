@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.william.gestao_vagas.modules.company.entities.Company;
 import com.william.gestao_vagas.modules.company.services.CreateCompanyService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
 
 @RestController
 @RequestMapping("/company")
+@Tag(name = "Company", description = "Informações de company")
 public class CompanyController {
 
     @Autowired
