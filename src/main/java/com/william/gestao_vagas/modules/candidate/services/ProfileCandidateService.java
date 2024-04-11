@@ -3,9 +3,9 @@ package com.william.gestao_vagas.modules.candidate.services;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.william.gestao_vagas.exception.UserNotFoundException;
 import com.william.gestao_vagas.modules.candidate.dto.ProfileCandidateResponseDTO;
 import com.william.gestao_vagas.modules.candidate.repository.CandidateRepository;
 
@@ -18,7 +18,7 @@ public class ProfileCandidateService {
     public ProfileCandidateResponseDTO execute (UUID idCandidate) {
         var candidate = candidateRepository.findById(idCandidate)
         .orElseThrow(() -> {
-            throw new UsernameNotFoundException("username não encontrado");
+            throw new UserNotFoundException();
         });
 
         var CandidateDTO = ProfileCandidateResponseDTO.builder()
