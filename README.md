@@ -18,6 +18,7 @@ git clone https://github.com/WilliamCP19/Gestao_Vagas-Rocketseat.git
 2. Configure o banco de dados editando o arquivo application.properties e fornecendo as configurações necessárias:
 
 ```java
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.${HIBERNATE_DIALECT}
 spring.datasource.url=${DATABASE_URL}
 spring.datasource.username=${DATABASE_USERNAME}
 spring.datasource.password=${DATABASE_PASSWORD}
